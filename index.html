@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Garfield Characters</title>
+</head>
+
+<body>
+
+<h2>Select a Character</h2>
+
+<select id="characterSelect"></select>
+
+<br><br>
+
+<img id="characterImage" src="images/Garfield.jpg" width="300">
+
+<script>
+
+const characters = ["Garfield","Odie","Nermal","Pooky","Jon"];
+
+let select = document.getElementById("characterSelect");
+let image = document.getElementById("characterImage");
+
+characters.forEach(function(character){
+
+let option = document.createElement("option");
+option.text = character;
+option.value = character;
+
+select.appendChild(option);
+
+});
+
+select.addEventListener("change", function(){
+
+let selected = select.value;
+
+image.src = "images/" + selected + ".jpg";
+
+});
+
+</script>
+
+</body>
+</html>
